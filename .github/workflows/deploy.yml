@@ -1,4 +1,4 @@
-name: Deploy static site to EC2 (Nginx)
+name: Deploy MySite to AWS EC2 server
 
 on:
   push:
