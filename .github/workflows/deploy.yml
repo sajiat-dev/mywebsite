@@ -30,7 +30,7 @@ jobs:
           TARGET_DIR=${WEB_ROOT:-/var/www/html}
 
           # Connect to server
-          ssh -i ~/.ssh/id_rsa "$EC2_USER@$EC2_HOST" 
+          ssh -i ~/.ssh/id_rsa "$EC2_USER@$EC2_HOST" "sudo chown -R $EC2_USER:$EC2_USER $TARGET_DIR"
           
           rsync -avz \
             --delete \
