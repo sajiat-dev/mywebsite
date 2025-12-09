@@ -34,12 +34,4 @@ jobs:
           # Create target dir if it doesn't exist
           ssh -i ~/.ssh/id_rsa "$EC2_USER@$EC2_HOST" "sudo mkdir -p $TARGET_DIR && sudo chown -R $EC2_USER:$EC2_USER $TARGET_DIR"
 
-          # If your HTML files are in repo root, use ./ 
-          # If they are in a 'site/' folder, change ./ to ./site/
-          rsync -avz \
-            --delete \
-            --exclude '.git*' \
-            --exclude '.github' \
-            ./ \
-            "$EC2_USER@$EC2_HOST:$TARGET_DIR/"
 
