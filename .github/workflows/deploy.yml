@@ -34,6 +34,9 @@ jobs:
           # connect's to ec2 server
           ssh -i ~/.ssh/id_rsa "$EC2_USER@$EC2_HOST" 
 
-          rsync -avz --delete ./ "$EC2_USER@$EC2_HOST:$TARGET_DIR/"
+          rsync -avz \
+            --delete \
+            ./ \
+            "$EC2_USER@$EC2_HOST:$TARGET_DIR/"
 
 
