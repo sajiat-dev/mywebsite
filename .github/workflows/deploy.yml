@@ -26,8 +26,7 @@ jobs:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           WEB_ROOT: ${{ secrets.EC2_WEB_ROOT }}
         run: |
-          # Default web root if EC2_WEB_ROOT is not set
-          TARGET_DIR=${WEB_ROOT}
+          TARGET_DIR=$WEB_ROOT
 
           echo "Deploying to $EC2_USER@$EC2_HOST:$TARGET_DIR"
 
